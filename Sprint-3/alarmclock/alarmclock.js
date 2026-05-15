@@ -24,10 +24,9 @@ function displyUpdate() {
 
 function setAlarm() {
   const interval = setInterval(() => {
-    if (totalSeconds > 0) {
       totalSeconds--;
       displyUpdate();
-    } else {
+    if (totalSeconds <= 0) {
       clearInterval(interval);
       userInput.value = "";
       playAlarm();
